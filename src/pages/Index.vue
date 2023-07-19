@@ -38,7 +38,7 @@
       <q-toolbar class="bg-primary">
         <q-btn
           fab
-          style="margin-bottom: -42px;"
+          style="margin-bottom: -56px;"
           class="q-ml-md"
           color="secondary"
           icon="mdi-plus"
