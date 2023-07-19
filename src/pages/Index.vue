@@ -1,11 +1,23 @@
 <template>
   <q-page class="row">
     <q-card class="col-xs-9">
-      <q-toolbar class="bg-primary" />
-      <q-list>
+      <q-toolbar>
+        <q-input
+          dense
+          placeholder="Search"
+          borderless
+          class="full-width"
+          :value="search"
+        >
+          <template #append>
+            <q-icon name="mdi-magnify"></q-icon>
+          </template>
+        </q-input>
+      </q-toolbar>
+      <q-list bordered>
         <q-item>
           <q-item-section side>
-            <q-checkbox :model-value="true" />
+            <q-checkbox :value="true" />
           </q-item-section>
           <q-item-section>
             Go Shopping
@@ -29,7 +41,7 @@ export default {
   name: 'PageIndex',
   data () {
     return {
-      selected: null
+      search: ''
     }
   }
 }
