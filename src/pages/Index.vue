@@ -14,24 +14,7 @@
           </template>
         </q-input>
       </q-toolbar>
-      <q-list bordered>
-        <q-item>
-          <q-item-section side>
-            <q-checkbox :value="true" />
-          </q-item-section>
-          <q-item-section>
-            Go Shopping
-          </q-item-section>
-          <q-item-section side>
-            <q-btn
-              flat
-              round
-              size="sm"
-              icon="mdi-delete"
-            />
-          </q-item-section>
-        </q-item>
-      </q-list>
+      <TodoList />
     </q-card>
 
     <div class="col-xs-3">
@@ -45,11 +28,13 @@
 <script>
 import { defineComponent } from 'vue'
 import CreateTodoButton from '../components/CreateTodoButton.vue'
+import TodoList from '../components/TodoList.vue'
 
 export default defineComponent({
   name: 'PageIndex',
   components: {
-    CreateTodoButton
+    CreateTodoButton,
+    TodoList
   },
   data () {
     return {
