@@ -36,25 +36,25 @@
 
     <div class="col-xs-3">
       <q-toolbar class="bg-primary">
-        <q-btn
-          fab
-          style="margin-bottom: -56px;"
-          class="q-ml-md"
-          color="secondary"
-          icon="mdi-plus"
-        />
+        <CreateTodoButton />
       </q-toolbar>
     </div>
   </q-page>
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue'
+import CreateTodoButton from '../components/CreateTodoButton.vue'
+
+export default defineComponent({
   name: 'PageIndex',
+  components: {
+    CreateTodoButton
+  },
   data () {
     return {
       search: ''
     }
   }
-}
+})
 </script>
