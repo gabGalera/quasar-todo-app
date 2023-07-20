@@ -23,39 +23,17 @@
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-1">
-      <q-list>
-        <q-toolbar class="bg-primary"></q-toolbar>
-        <q-item class="bg-grey-3">
-          <q-item-section>
-            Lists
-          </q-item-section>
-          <q-item-section side>
-            <q-btn
-              icon="mdi-plus"
-              size="sm"
-              flat
-              round
-            />
-          </q-item-section>
-        </q-item>
-        <q-item clickable>
-          <q-item-section side>
-            <q-icon
-              name="mdi-shopping"
-            />
-          </q-item-section>
-          <q-item-section
-            class="text-grey-9"
-          >
-            Shopping List
-          </q-item-section>
-          <q-item-section side>
-            12
-          </q-item-section>
-        </q-item>
-      </q-list>
+      <q-toolbar class="bg-primary"></q-toolbar>
+      <q-item class="bg-grey-3">
+        <q-item-section>
+          Lists
+        </q-item-section>
+        <q-item-section side>
+          <CreateTodoListButton />
+        </q-item-section>
+      </q-item>
+      <TodoListsList />
     </q-drawer>
-
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -63,9 +41,15 @@
 </template>
 
 <script>
+import CreateTodoListButton from '../components/CreateTodoListButton.vue'
+import TodoListsList from '../components/TodoListsList.vue'
 
 export default {
   name: 'MainLayout',
+  components: {
+    CreateTodoListButton,
+    TodoListsList
+  },
   data () {
     return {
       leftDrawerOpen: false

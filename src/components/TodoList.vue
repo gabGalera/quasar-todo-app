@@ -2,26 +2,28 @@
   <q-list bordered>
     <q-item>
       <q-item-section side>
-        <q-checkbox :value="true" />
+        <UpdateTodoCheckbox />
       </q-item-section>
       <q-item-section>
         Go Shopping
       </q-item-section>
       <q-item-section side>
-        <q-btn
-          flat
-          round
-          size="sm"
-          icon="mdi-delete"
-        />
+        <DeleteTodoButton />
       </q-item-section>
     </q-item>
   </q-list>
 </template>
 
 <script>
+import UpdateTodoCheckbox from '../components/UpdateTodoCheckbox.vue'
+import DeleteTodoButton from '../components/DeleteTodoButton.vue'
+
 export default {
   name: 'TodoList',
+  components: {
+    UpdateTodoCheckbox,
+    DeleteTodoButton
+  },
   data () {
     return {}
   }
