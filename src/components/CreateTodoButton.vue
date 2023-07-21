@@ -5,14 +5,30 @@
     class="q-ml-md"
     color="secondary"
     icon="mdi-plus"
+    @click="handleButtonClicked"
   />
 </template>
 
 <script>
 export default {
   name: 'CreateTodoButton',
-  data () {
-    return {}
+  methods: {
+    handleButtonClicked () {
+      this.$q.dialog({
+        title: 'Create Todo',
+        prompt: {
+          model: '',
+          type: 'text'
+        }
+      }).onOk(this.createTodo)
+    },
+    createTodo (data) {
+      this.$q.notify({
+        message: 'Todo Created!',
+        icon: 'mdi-check',
+        color: 'positive'
+      })
+    }
   }
 }
 </script>
